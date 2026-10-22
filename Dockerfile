@@ -20,3 +20,4 @@ COPY --from=base /app/static ./static
 EXPOSE 8080
 
 CMD [ "./main" ]
+
