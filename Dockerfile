@@ -1,4 +1,4 @@
-FROM golang:1.22.5 as base
+FROM golang:1.22.5 AS base
 
 WORKDIR /app
 
@@ -11,7 +11,7 @@ COPY . .
 RUN go build -o main .
 
 #Final stage with distrolage img
-FROM gcr.io/distrolage/base
+FROM gcr.io/distroless/base
 
 COPY --from=base /app/main .
 
